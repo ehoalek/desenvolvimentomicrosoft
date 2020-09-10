@@ -37,14 +37,9 @@ namespace VendasConsole.Utils
                 peso--;
             }
             resto = soma % 11;
-            if (resto < 2)
-            {
-                digito1 = 0;
-            }
-            else
-            {
-                digito1 = 11 - resto;
-            }
+
+            digito1 = resto < 2 ? 0 : 11 - resto;
+
             if (Convert.ToInt32(cpf[9].ToString()) != digito1)
             {
                 return false;
